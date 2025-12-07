@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visi & Misi - Website Desa Sumberjo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="beranda.css">
+</head>
+<body>
+<header>
+        <div class="logo-section">
+            <span class="logo-text"><a href="beranda.html">WEBSITE DESA SUMBERJO</a></span>
+        </div>
+        
+        <div class="header-right">
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="cari sesuatu..." id="searchInput">
+                <button class="search-btn" onclick="performSearch()">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 19L15.1907 14.4439M15.1907 14.4439C15.9626 13.7126 16.575 12.8444 16.9927 11.8889C17.4105 10.9335 17.6255 9.90942 17.6255 8.87523C17.6255 7.84104 17.4105 6.81697 16.9927 5.86151C16.575 4.90604 15.9626 4.03788 15.1907 3.3066C14.4188 2.57532 13.5024 1.99523 12.4939 1.59947C11.4853 1.2037 10.4044 1 9.31274 1C8.22109 1 7.14014 1.2037 6.13159 1.59947C5.12304 1.99523 4.20665 2.57532 3.43475 3.3066C1.8758 4.78349 1 6.78659 1 8.87523C1 10.9639 1.8758 12.967 3.43475 14.4439C4.99369 15.9207 7.10806 16.7505 9.31274 16.7505C11.5174 16.7505 13.6318 15.9207 15.1907 14.4439Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="divider"></div>
+            <button class="dark-mode-btn" onclick="toggleDarkMode()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.6667 23.3333C18.1102 23.3333 23.3333 18.1102 23.3333 11.6667C23.3333 11.1265 22.5237 11.0367 22.2448 11.4998C21.6501 12.4849 20.839 13.3217 19.873 13.9469C18.907 14.5721 17.8114 14.9692 16.6691 15.1082C15.5269 15.2472 14.368 15.1245 13.2802 14.7493C12.1924 14.3741 11.2043 13.7563 10.3907 12.9427C9.57702 12.129 8.9592 11.1409 8.58401 10.0531C8.20882 8.96533 8.08609 7.80643 8.22511 6.6642C8.36414 5.52196 8.76128 4.42634 9.38645 3.46032C10.0116 2.4943 10.8484 1.68321 11.8335 1.0885C12.2967 0.8085 12.2068 0 11.6667 0C5.22317 0 0 5.22317 0 11.6667C0 18.1102 5.22317 23.3333 11.6667 23.3333Z" fill="black"/>
+                </svg>
+            </button>
+            <div class="divider"></div>
+            <button class="profile-btn" onclick="openProfile()">
+                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.2632 17.2941C20.7092 17.2944 21.1381 17.4777 21.4609 17.806C21.7837 18.1344 21.9757 18.5827 21.9971 19.058C22.0186 19.5333 21.8678 19.9992 21.576 20.3591C21.2842 20.7191 20.8739 20.9454 20.4299 20.9914L20.2632 21H1.73684C1.2908 20.9998 0.861943 20.8165 0.539131 20.4881C0.21632 20.1597 0.0243019 19.7114 0.00286664 19.2361C-0.0185686 18.7608 0.132222 18.2949 0.423993 17.935C0.715763 17.5751 1.12615 17.3487 1.57011 17.3028L1.73684 17.2941H20.2632ZM20.2632 8.64706C20.7238 8.64706 21.1656 8.84228 21.4913 9.18977C21.817 9.53727 22 10.0086 22 10.5C22 10.9914 21.817 11.4627 21.4913 11.8102C21.1656 12.1577 20.7238 12.3529 20.2632 12.3529H1.73684C1.2762 12.3529 0.83443 12.1577 0.508709 11.8102C0.182988 11.4627 0 10.9914 0 10.5C0 10.0086 0.182988 9.53727 0.508709 9.18977C0.83443 8.84228 1.2762 8.64706 1.73684 8.64706H20.2632ZM20.2632 0C20.7238 0 21.1656 0.19522 21.4913 0.542714C21.817 0.890208 22 1.36151 22 1.85294C22 2.34437 21.817 2.81567 21.4913 3.16317C21.1656 3.51066 20.7238 3.70588 20.2632 3.70588H1.73684C1.2762 3.70588 0.83443 3.51066 0.508709 3.16317C0.182988 2.81567 0 2.34437 0 1.85294C0 1.36151 0.182988 0.890208 0.508709 0.542714C0.83443 0.19522 1.2762 0 1.73684 0H20.2632Z" fill="black"/>
+                </svg>
+            </button>
+            <div class="divider"></div>
+            <button class="login-btn" onclick="loginAdmin()">Log In Admin</button>
+        </div>
+    </header>
+
+
+
+    <!-- Visi & Misi Section -->
+    <section class="visimisi-section">
+        <!-- Main Header -->
+        <div class="visimisi-main-header">
+            <h1 class="visimisi-main-title">VISI & MISI</h1>
+            <p class="visimisi-main-subtitle">Desa Sumberjo, Kecamatan Rembang, Kabupaten Rembang</p>
+        </div>
+
+        <div class="visimisi-container">
+            <!-- Visi Card -->
+            <div class="visi-card">
+                <div class="card-header-vm">
+                    <div class="icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5C7.52 5 3.73 7.61 2 11.5C3.73 15.39 7.52 18 12 18C16.48 18 20.27 15.39 22 11.5C20.27 7.61 16.48 5 12 5ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="#309C9F"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title-vm">VISI</h2>
+                </div>
+                <div class="card-body-vm">
+                    <div class="content-box">
+                        <p class="vm-text">Terwujudnya Tata Kelola Pemerintahan Desa Yang Baik Dan Bersih Guna Mewujudkan Desa Sumberjo Yang Adil, Makmur, Sejahtera, Bermartabat Serta Berakhlakul Karimah</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Misi Card -->
+            <div class="misi-card">
+                <div class="card-header-vm">
+                    <div class="icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM7 10H9V17H7V10ZM11 7H13V17H11V7ZM15 13H17V17H15V13Z" fill="#309C9F"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title-vm">MISI</h2>
+                </div>
+                <div class="card-body-vm">
+                    <div class="content-box">
+                        <ul class="misi-list">
+                            <li>Menyelenggarakan Pemerintahan Desa Yang Siap Melayani</li>
+                            <li>Menciptakan Pemerintahan Yang Transparan, Bersih Dan Mandiri</li>
+                            <li>Melaksanakan Pembangunan Yang Merata Dan Tepat Guna</li>
+                            <li>Mengembangkan Perekonomian Masyarakat Melalui Pemanfaatan Potensi Desa</li>
+                            <li>Meningkatkan Kesejahteraan Masyarakat Untuk Mencapai Taraf Kehidupan Yang Lebih Baik</li>
+                            <li>Meningkatkan Sumber Daya Manusia Dan Menggali Sumber Daya Alam Desa Sumberjo</li>
+                            <li>Menciptakan Lingkungan Yang Islami Dan Berakhakul Karimah</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nilai-nilai Section -->
+        <div class="nilai-section">
+            <div class="nilai-header">
+                <div class="nilai-icon-wrapper">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#309C9F"/>
+                    </svg>
+                </div>
+                <h2 class="nilai-title">NILAI-NILAI PEMBANGUNAN</h2>
+                <p class="nilai-subtitle">Nilai-nilai yang akan dikembangkan dalam melaksanakan visi dan misi Kepala Desa adalah pembangunan yang dilaksanakan di Desa Sumberjo dengan berkeadilan dan tepat sasaran</p>
+            </div>
+            
+            <div class="nilai-grid">
+                <div class="nilai-card">
+                    <div class="nilai-number">1</div>
+                    <h3 class="nilai-card-title">Tata Kelola Pemerintahan</h3>
+                    <p class="nilai-card-text">Tata kelola pemerintahan yang bersih, transparan dan akuntabel yang diwujudkan dengan pengelolaan keuangan yang baik, pelaksanaan pembangunan yang sesuai dengan ketentuan perundang-undangan dan disiplin aparatur pemerintahan desa dalam setiap tahapan pelaksanaan pembangunan.</p>
+                </div>
+
+                <div class="nilai-card">
+                    <div class="nilai-number">2</div>
+                    <h3 class="nilai-card-title">Pembangunan Berkeadilan</h3>
+                    <p class="nilai-card-text">Pembangunan yang berkeadilan, diwujudkan dengan memperhatikan pemerataan pembangunan pada masing-masing wilayah RT/RW/Dusun/lingkungan pemukiman, persawahan dan lingkungan lain yang berhubungan dengan kesejahteraan masyarakat.</p>
+                </div>
+
+                <div class="nilai-card">
+                    <div class="nilai-number">3</div>
+                    <h3 class="nilai-card-title">Pro Warga Miskin</h3>
+                    <p class="nilai-card-text">Pembangunan ekonomi yang berfihak kepada warga miskin, operasionalisasinya adalah keberfihakan pengelolaan anggaran yang pro terhadap pengentasan kemiskinan dan kelompok warga miskin.</p>
+                </div>
+
+                <div class="nilai-card">
+                    <div class="nilai-number">4</div>
+                    <h3 class="nilai-card-title">Pemanfaatan Potensi Desa</h3>
+                    <p class="nilai-card-text">Pemanfaatan potensi desa yang sebesar-besarnya untuk kemakmuran warga Desa Sumberjo, dengan memanfaatkan potensi Sumberdaya Manusia warga Desa Sumberjo dengan meminimalisir oligarki dalam pemanfaatan potensi desa dimaksud.</p>
+                </div>
+
+                <div class="nilai-card">
+                    <div class="nilai-number">5</div>
+                    <h3 class="nilai-card-title">Nilai Agama & Budaya</h3>
+                    <p class="nilai-card-text">Mempertahankan kondisi sosial, budaya, dan nilai-nilai agama dalam melaksanakan setiap derap langkah pembangunan di Desa. Setiap pembangunan yang dilaksanakan tidak boleh lepas dari nilai-nilai agama dan budaya adi luhur bangsa, dan hasilnya baik berupa output maupun outcome tetap sesuai dengan nilai-nilai agama dan budaya bangsa Indonesia.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pemerintah Desa Carousel Section -->
+        <div class="pemerintah-section">
+            <div class="pemerintah-header">
+                <h2 class="pemerintah-title">PEMERINTAH DESA</h2>
+                <p class="pemerintah-subtitle">Struktur Pemerintahan Desa Sumberjo</p>
+            </div>
+
+            <div class="carousel-pemerintah-container">
+                <button class="carousel-arrow carousel-arrow-left" onclick="slideCarousel(-1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+
+                <div class="carousel-pemerintah-wrapper">
+                    <div class="carousel-pemerintah-track" id="carouselTrack">
+                        <!-- Pemerintah Card 1 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <img src="images/kades.jpeg" alt="">
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Desa</h3>
+                                <p class="pemerintah-position">H. Slamet Rahayu ,SH.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 2 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <img src="images/kades.jpg" alt="">
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Sekretaris Desa</h3>
+                                <p class="pemerintah-position">Wahyudi Prio Tamtomo</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 3 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Staf TU & Umum</h3>
+                                <p class="pemerintah-position">Ayu Vemiliawati</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 4 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Staf Keuangan</h3>
+                                <p class="pemerintah-position">Ariani Suliastiningrum</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 5 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Staf Perencanaan</h3>
+                                <p class="pemerintah-position">Yohanes Prasetyo</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 6 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepla Seksi Pemerintahan</h3>
+                                <p class="pemerintah-position">Devi Yulianingrum</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 7 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Seksi Kesejahteraan</h3>
+                                <p class="pemerintah-position">Hadi Siswanto</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 8 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Seksi Pelayanan</h3>
+                                <p class="pemerintah-position">Tri Ratna Adhiyaningtyas</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 9 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Dusun Grajen</h3>
+                                <p class="pemerintah-position">Supriyanto</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 10 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Dusun Belik</h3>
+                                <p class="pemerintah-position">Alex Triyono</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 11 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Dusun Gambiran</h3>
+                                <p class="pemerintah-position">Suyitno</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 12 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Dusun Sumberjo</h3>
+                                <p class="pemerintah-position">Rurun Laksana Wijaya</p>
+                            </div>
+                        </div>
+
+                        <!-- Pemerintah Card 13 -->
+                        <div class="pemerintah-card">
+                            <div class="pemerintah-photo">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="70" r="35" fill="#2c3e50"/>
+                                    <path d="M50 200 Q50 140 100 140 Q150 140 150 200 Z" fill="#2c3e50"/>
+                                </svg>
+                            </div>
+                            <div class="pemerintah-info">
+                                <h3 class="pemerintah-name">Kepala Dusun Karangmencol</h3>
+                                <p class="pemerintah-position">Budi Santoso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-right" onclick="slideCarousel(1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <div class="box">
+      <footer class="footer" role="contentinfo">
+        <section class="alamat-bottombar" aria-labelledby="alamat-heading">
+          <img
+            class="lambang-kabupaten"
+            src="images/logo_kab_rembang.png"
+            alt="Lambang Kabupaten Rembang"
+          />
+          <h2 id="alamat-heading" class="text-wrapper">SUMBERJO</h2>
+          <p class="div">Kec. Rembang Kab. Rembang</p>
+          <address class="jl-slametriyadi-no">
+            <span class="span"
+              >Jl.Slametriyadi No.1 Sumberjo. (59219)<br />Rembang Regency, Central Java.<br /><br
+            /></span>
+            <a
+              href="https://geohack.toolforge.org/geohack.php?pagename=Sumberjo,_Rembang,_Rembang&language=id&params=6_42_45.79_S_111_20_15.47_E_"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Koordinat geografis Sumberjo"
+              ><span class="text-wrapper-2">6°42′45.79″S 111°20′15.47″E</span></a
+            >
+          </address>
+          <p class="p">© Copyright 2025 | Kel.4 X PPLG 1</p>
+        </section>
+        <nav class="sosial-media" aria-labelledby="sosmed-heading">
+          <h3 id="sosmed-heading" class="text-wrapper-3">SOSIAL MEDIA</h3>
+          <ul class="sosial-media-list">
+            <li class="sosial-media-item">
+              <a
+                href="#"
+                class="sosial-media-link"
+                aria-label="WhatsApp Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="vector" src="images/wa.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-4">WhatsApp</span>
+              </a>
+            </li>
+            <li class="sosial-media-item">
+              <a
+                href="https://www.facebook.com/groups/277448679329491/?mibextid=rS40aB7S9Ucbxw6v"
+                class="sosial-media-link"
+                aria-label="Facebook Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="img" src="images/fb.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-5">Facebook</span>
+              </a>
+            </li>
+            <li class="sosial-media-item">
+              <a
+                href="https://www.instagram.com/dputarurembangkab/"
+                class="sosial-media-link"
+                aria-label="Instagram Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="vector-2" src="images/ig.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-6">Instagram</span>
+              </a>
+            </li>
+            <li class="sosial-media-item">
+              <a
+                href="https://github.com/OpenSID/OpenSID"
+                class="sosial-media-link"
+                aria-label="GitHub Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="vector-3" src="images/git.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-7">GitHub</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="tautan-terkait" aria-labelledby="tautan-heading">
+          <h3 id="tautan-heading" class="text-wrapper-8">TAUTAN TERKAIT</h3>
+          <ul class="tautan-terkait-list">
+            <li class="tautan-terkait-item">
+              <a href="https://dinkominfo.rembangkab.go.id/" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img
+                  class="lambang-kabupaten-2"
+                  src="images/logo-kominfo.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-9">DinKominfo Rembang</span>
+              </a>
+            </li>
+            <li class="tautan-terkait-item">
+              <a href="https://rembangkab.bps.go.id/id" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img class="bps" src="images/bps.webp" alt="" aria-hidden="true" />
+                <span class="text-wrapper-10">BPS Kab. Rembang</span>
+              </a>
+            </li>
+            <li class="tautan-terkait-item">
+              <a href="https://id.wikipedia.org/wiki/Kabupaten_Rembang" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img class="wikipedia" src="images/wikipedia.png" alt="" aria-hidden="true" />
+                <span class="text-wrapper-11">Wikipedia Rembang</span>
+              </a>
+            </li>
+            <li class="tautan-terkait-item">
+              <a href="https://www.detik.com/tag/rembang" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img class="detikcom" src="images/detikcom.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-12">DetikJateng Rembang</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <aside class="pengunjung" aria-labelledby="pengunjung-heading">
+          <h3 id="pengunjung-heading" class="text-wrapper-13">PENGUNJUNG</h3>
+          <dl class="frame">
+            <dt class="text-wrapper-14">TOTAL</dt>
+            <dd class="text-wrapper-15">0000001</dd>
+            <dt class="text-wrapper-16">ONLINE</dt>
+            <dd class="text-wrapper-17">0000001</dd>
+            <dt class="text-wrapper-18">BULAN INI</dt>
+            <dd class="text-wrapper-19">0000001</dd>
+          </dl>
+        </aside>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            alert(`Searching for: ${query}`);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function openProfile() {
+            alert('Opening profile...');
+        }
+
+        function loginAdmin() {
+            alert('Redirecting to admin login...');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                const menu = dropdown.querySelector('.dropdown-menu');
+
+                toggle.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    menu.classList.toggle('show');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!dropdown.contains(event.target) && menu.classList.contains('show')) {
+                        menu.classList.remove('show');
+                    }
+                });
+            });
+
+            // Carousel functionality
+            initCarousel();
+        });
+
+        let currentSlide = 0;
+        const cardsPerView = 5;
+        let totalCards = 12;
+
+        function initCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const cards = track.querySelectorAll('.pemerintah-card');
+            totalCards = cards.length;
+            
+            const dotsContainer = document.getElementById('carouselDots');
+            const totalSlides = Math.ceil(totalCards - cardsPerView + 1);
+            
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+
+            updateCarousel();
+        }
+
+        function slideCarousel(direction) {
+            const maxSlide = totalCards - cardsPerView;
+            currentSlide += direction;
+            
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide > maxSlide) currentSlide = maxSlide;
+            
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const cardWidth = track.querySelector('.pemerintah-card').offsetWidth;
+            const gap = 20;
+            const offset = -(currentSlide * (cardWidth + gap));
+            
+            track.style.transform = `translateX(${offset}px)`;
+            
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        window.addEventListener('resize', updateCarousel);
+    </script>
+</body>
+</html>

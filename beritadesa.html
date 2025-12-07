@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Desa - Website Desa Sumberjo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="beranda.css">
+</head>
+<body>
+<header>
+        <div class="logo-section">
+            <span class="logo-text"><a href="beranda.html">WEBSITE DESA SUMBERJO</a></span>
+        </div>
+        
+        <div class="header-right">
+            <div class="search-section">
+                <input type="text" class="search-bar" placeholder="cari sesuatu..." id="searchInput">
+                <button class="search-btn" onclick="performSearch()">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 19L15.1907 14.4439M15.1907 14.4439C15.9626 13.7126 16.575 12.8444 16.9927 11.8889C17.4105 10.9335 17.6255 9.90942 17.6255 8.87523C17.6255 7.84104 17.4105 6.81697 16.9927 5.86151C16.575 4.90604 15.9626 4.03788 15.1907 3.3066C14.4188 2.57532 13.5024 1.99523 12.4939 1.59947C11.4853 1.2037 10.4044 1 9.31274 1C8.22109 1 7.14014 1.2037 6.13159 1.59947C5.12304 1.99523 4.20665 2.57532 3.43475 3.3066C1.8758 4.78349 1 6.78659 1 8.87523C1 10.9639 1.8758 12.967 3.43475 14.4439C4.99369 15.9207 7.10806 16.7505 9.31274 16.7505C11.5174 16.7505 13.6318 15.9207 15.1907 14.4439Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="divider"></div>
+            <button class="dark-mode-btn" onclick="toggleDarkMode()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.6667 23.3333C18.1102 23.3333 23.3333 18.1102 23.3333 11.6667C23.3333 11.1265 22.5237 11.0367 22.2448 11.4998C21.6501 12.4849 20.839 13.3217 19.873 13.9469C18.907 14.5721 17.8114 14.9692 16.6691 15.1082C15.5269 15.2472 14.368 15.1245 13.2802 14.7493C12.1924 14.3741 11.2043 13.7563 10.3907 12.9427C9.57702 12.129 8.9592 11.1409 8.58401 10.0531C8.20882 8.96533 8.08609 7.80643 8.22511 6.6642C8.36414 5.52196 8.76128 4.42634 9.38645 3.46032C10.0116 2.4943 10.8484 1.68321 11.8335 1.0885C12.2967 0.8085 12.2068 0 11.6667 0C5.22317 0 0 5.22317 0 11.6667C0 18.1102 5.22317 23.3333 11.6667 23.3333Z" fill="black"/>
+                </svg>
+            </button>
+            <div class="divider"></div>
+            <button class="profile-btn" onclick="openProfile()">
+                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.2632 17.2941C20.7092 17.2944 21.1381 17.4777 21.4609 17.806C21.7837 18.1344 21.9757 18.5827 21.9971 19.058C22.0186 19.5333 21.8678 19.9992 21.576 20.3591C21.2842 20.7191 20.8739 20.9454 20.4299 20.9914L20.2632 21H1.73684C1.2908 20.9998 0.861943 20.8165 0.539131 20.4881C0.21632 20.1597 0.0243019 19.7114 0.00286664 19.2361C-0.0185686 18.7608 0.132222 18.2949 0.423993 17.935C0.715763 17.5751 1.12615 17.3487 1.57011 17.3028L1.73684 17.2941H20.2632ZM20.2632 8.64706C20.7238 8.64706 21.1656 8.84228 21.4913 9.18977C21.817 9.53727 22 10.0086 22 10.5C22 10.9914 21.817 11.4627 21.4913 11.8102C21.1656 12.1577 20.7238 12.3529 20.2632 12.3529H1.73684C1.2762 12.3529 0.83443 12.1577 0.508709 11.8102C0.182988 11.4627 0 10.9914 0 10.5C0 10.0086 0.182988 9.53727 0.508709 9.18977C0.83443 8.84228 1.2762 8.64706 1.73684 8.64706H20.2632ZM20.2632 0C20.7238 0 21.1656 0.19522 21.4913 0.542714C21.817 0.890208 22 1.36151 22 1.85294C22 2.34437 21.817 2.81567 21.4913 3.16317C21.1656 3.51066 20.7238 3.70588 20.2632 3.70588H1.73684C1.2762 3.70588 0.83443 3.51066 0.508709 3.16317C0.182988 2.81567 0 2.34437 0 1.85294C0 1.36151 0.182988 0.890208 0.508709 0.542714C0.83443 0.19522 1.2762 0 1.73684 0H20.2632Z" fill="black"/>
+                </svg>
+            </button>
+            <div class="divider"></div>
+            <button class="login-btn" onclick="loginAdmin()">Log In Admin</button>
+        </div>
+    </header>
+
+    <!-- Hero Section Berita -->
+    <section class="berita-hero">
+        <div class="berita-hero-overlay">
+            <h1 class="berita-hero-title">BERITA DESA</h1>
+            <p class="berita-hero-subtitle">Informasi Terkini Seputar Desa Sumberjo</p>
+        </div>
+    </section>
+
+    <!-- Filter & Search Section -->
+    <section class="berita-filter-section">
+        <div class="berita-filter-container">
+            <div class="filter-group">
+                <button class="filter-btn active" onclick="filterBerita('semua')">Semua Berita</button>
+                <button class="filter-btn" onclick="filterBerita('pembangunan')">Pembangunan</button>
+                <button class="filter-btn" onclick="filterBerita('kesehatan')">Kesehatan</button>
+                <button class="filter-btn" onclick="filterBerita('pendidikan')">Pendidikan</button>
+                <button class="filter-btn" onclick="filterBerita('sosial')">Sosial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Utama Section -->
+    <section class="berita-content-section">
+        <div class="berita-content-container">
+            <h2 class="section-title-berita">BERITA TERBARU</h2>
+            
+            <div class="berita-main-grid">
+                <!-- Berita Card 1 -->
+                <article class="berita-full-card">
+                    <a href="https://rembangkab.go.id/berita/dinsosppkb-rembang-sediakan-layanan-responsif-untuk-validasi-data-dan-klarifikasi-bansos/" class="berita-full-link" target="_blank">
+                        <div class="berita-full-image">
+                            <img src="images/berita1.jpg" alt="Berita 1">
+                            <div class="berita-category">Sosial</div>
+                        </div>
+                        <div class="berita-full-content">
+                            <h3 class="berita-full-title">Dinsosppkb Rembang Sediakan Layanan Responsif untuk Validasi Data dan Klarifikasi Bansos</h3>
+                            <p class="berita-full-excerpt">Dinas Sosial Pemberdayaan Perempuan dan Keluarga Berencana (Dinsosppkb) Kabupaten Rembang menyediakan layanan aduan serta informasi bagi masyarakat yang ingin melakukan validasi data dan klarifikasi terkait bantuan sosial yang diterima.</p>
+                            <div class="berita-full-meta">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                    </svg>
+                                    <span>Administrator</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                        <path d="M12 7v5l3 3"></path>
+                                    </svg>
+                                    <span>1 Desember 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                    <span>245 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Berita Card 2 -->
+                <article class="berita-full-card">
+                    <a href="https://rembangkab.go.id/berita/kasus-baru-hiv-di-rembang-capai-131-orang-pemkab-perkuat-deteksi-dini/" class="berita-full-link" target="_blank">
+                        <div class="berita-full-image">
+                            <img src="images/berita2.jpg" alt="Berita 2">
+                            <div class="berita-category">Kesehatan</div>
+                        </div>
+                        <div class="berita-full-content">
+                            <h3 class="berita-full-title">Kasus Baru HIV di Rembang Capai 131 Orang, Pemkab Perkuat Deteksi Dini</h3>
+                            <p class="berita-full-excerpt">Dinas Kesehatan Kabupaten Rembang terus memperkuat upaya deteksi dini HIV. Hingga Oktober 2025, sebanyak 131 kasus baru Orang dengan HIV dan AIDS (ODHA) terdeteksi di wilayah Kabupaten Rembang.</p>
+                            <div class="berita-full-meta">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                    </svg>
+                                    <span>Staff Kesehatan</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                        <path d="M12 7v5l3 3"></path>
+                                    </svg>
+                                    <span>2 Desember 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                    <span>189 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Berita Card 3 -->
+                <article class="berita-full-card">
+                    <a href="https://rembangkab.go.id/berita/hut-korpri-ke-54-bupati-harno-bekerja-keras-untuk-layani-masyarakat/" class="berita-full-link" target="_blank">
+                        <div class="berita-full-image">
+                            <img src="images/berita3.jpg" alt="Berita 3">
+                            <div class="berita-category">Pembangunan</div>
+                        </div>
+                        <div class="berita-full-content">
+                            <h3 class="berita-full-title">HUT KORPRI ke-54, Bupati Harno: Bekerja Keras Untuk Layani Masyarakat</h3>
+                            <p class="berita-full-excerpt">Bupati Rembang H. Harno berharap Aparatur Sipil Negara (ASN) di Kabupaten Rembang memberikan pelayanan terbaik bagi masyarakat. Peringatan hari Korps Pegawai Republik Indonesia (KORPRI) ke-54 digelar secara sederhana di halaman Kantor Bupati Rembang.</p>
+                            <div class="berita-full-meta">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                    </svg>
+                                    <span>Administrator</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                        <path d="M12 7v5l3 3"></path>
+                                    </svg>
+                                    <span>1 Desember 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                    <span>312 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Berita Card 4 -->
+                <article class="berita-full-card">
+                    <a href="https://rembangkab.go.id/berita/rsud-dr-r-soetrasno-rembang-umumkan-perubahan-nomor-whatsapp-layanan-pelanggan/" class="berita-full-link" target="_blank">
+                        <div class="berita-full-image">
+                            <img src="images/berita4.jpg" alt="Berita 4">
+                            <div class="berita-category">Sosial</div>
+                        </div>
+                        <div class="berita-full-content">
+                            <h3 class="berita-full-title">RSUD dr. R. Soetrasno Rembang Umumkan Perubahan Nomor WhatsApp Layanan Pelanggan</h3>
+                            <p class="berita-full-excerpt">RSUD dr. R. Soetrasno Rembang resmi mengumumkan perubahan nomor WhatsApp untuk layanan pelanggan. Mulai sekarang, masyarakat dapat mengakses layanan informasi, administrasi, dan pengaduan melalui nomor baru 0813 8005 7444.</p>
+                            <div class="berita-full-meta">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                    </svg>
+                                    <span>Sekretaris Desa</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                        <path d="M12 7v5l3 3"></path>
+                                    </svg>
+                                    <span>15 November 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                    <span>156 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Berita Card 5 -->
+                <article class="berita-full-card">
+                    <a href="https://rembangkab.go.id/berita/pemkab-rembang-jemput-bola-perekaman-e-ktp-bagi-lansia-di-desa-ngotet/" class="berita-full-link" target="_blank">
+                        <div class="berita-full-image">
+                            <img src="images/berita5.jpg" alt="Berita 5">
+                            <div class="berita-category">Pendidikan</div>
+                        </div>
+                        <div class="berita-full-content">
+                            <h3 class="berita-full-title">Pemkab Rembang Jemput Bola Perekaman e-KTP bagi Lansia di Desa Ngotet</h3>
+                            <p class="berita-full-excerpt">Pemerintah Kabupaten (Pemkab) Rembang terus meningkatkan kualitas pelayanan administrasi kependudukan bagi masyarakat. Salah satu upaya yang dilakukan adalah dengan menghadirkan layanan perekaman e-KTP secara jemput bola.</p>
+                            <div class="berita-full-meta">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                    </svg>
+                                    <span>Administrator</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                        <path d="M12 7v5l3 3"></path>
+                                    </svg>
+                                    <span>27 November 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                    <span>203 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Berita Card 6 -->
+                <article class="berita-full-card">
+                    <a href="https://rembangkab.go.id/berita/raperda-apbd-2026-disetujui-bupati-harno-tekankan-sinkronisasi-eksekutif-legislatif/" class="berita-full-link" target="_blank">
+                        <div class="berita-full-image">
+                            <img src="images/berita6.jpg" alt="Berita 6">
+                            <div class="berita-category">Pembangunan</div>
+                        </div>
+                        <div class="berita-full-content">
+                            <h3 class="berita-full-title">Raperda APBD 2026 Disetujui, Bupati Harno Tekankan Sinkronisasi Eksekutif Legislatif</h3>
+                            <p class="berita-full-excerpt">Rancangan Peraturan Daerah (Raperda) tentang Anggaran Pendapatan dan Belanja Daerah (APBD) Tahun Anggaran 2026 Kabupaten Rembang telah mendapat persetujuan bersama antara Pemerintah Kabupaten dan DPRD Kabupaten Rembang.</p>
+                            <div class="berita-full-meta">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                    </svg>
+                                    <span>Administrator</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                        <path d="M12 7v5l3 3"></path>
+                                    </svg>
+                                    <span>28 November 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+                                    </svg>
+                                    <span>421 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- Page -->
+            <div class="berita-pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn"><a href="https://rembangkab.go.id/kategori/berita/page/2/">2</a></button>
+                <button class="pagination-btn"><a href="https://rembangkab.go.id/kategori/berita/page/3/">3</a></button>
+                <button class="pagination-btn"><a href="https://rembangkab.go.id/kategori/berita/">Next</a></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="box">
+      <footer class="footer" role="contentinfo">
+        <section class="alamat-bottombar" aria-labelledby="alamat-heading">
+          <img
+            class="lambang-kabupaten"
+            src="images/logo_kab_rembang.png"
+            alt="Lambang Kabupaten Rembang"
+          />
+          <h2 id="alamat-heading" class="text-wrapper">SUMBERJO</h2>
+          <p class="div">Kec. Rembang Kab. Rembang</p>
+          <address class="jl-slametriyadi-no">
+            <span class="span"
+              >Jl.Slametriyadi No.1 Sumberjo. (59219)<br />Rembang Regency, Central Java.<br /><br
+            /></span>
+            <a
+              href="https://geohack.toolforge.org/geohack.php?pagename=Sumberjo,_Rembang,_Rembang&language=id&params=6_42_45.79_S_111_20_15.47_E_"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Koordinat geografis Sumberjo"
+              ><span class="text-wrapper-2">6°42′45.79″S 111°20′15.47″E</span></a
+            >
+          </address>
+          <p class="p">© Copyright 2025 | Kel.4 X PPLG 1</p>
+        </section>
+        <nav class="sosial-media" aria-labelledby="sosmed-heading">
+          <h3 id="sosmed-heading" class="text-wrapper-3">SOSIAL MEDIA</h3>
+          <ul class="sosial-media-list">
+            <li class="sosial-media-item">
+              <a
+                href="#"
+                class="sosial-media-link"
+                aria-label="WhatsApp Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="vector" src="images/wa.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-4">WhatsApp</span>
+              </a>
+            </li>
+            <li class="sosial-media-item">
+              <a
+                href="https://www.facebook.com/groups/277448679329491/?mibextid=rS40aB7S9Ucbxw6v"
+                class="sosial-media-link"
+                aria-label="Facebook Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="img" src="images/fb.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-5">Facebook</span>
+              </a>
+            </li>
+            <li class="sosial-media-item">
+              <a
+                href="https://www.instagram.com/dputarurembangkab/"
+                class="sosial-media-link"
+                aria-label="Instagram Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="vector-2" src="images/ig.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-6">Instagram</span>
+              </a>
+            </li>
+            <li class="sosial-media-item">
+              <a
+                href="https://github.com/OpenSID/OpenSID"
+                class="sosial-media-link"
+                aria-label="GitHub Sumberjo"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img class="vector-3" src="images/git.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-7">GitHub</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="tautan-terkait" aria-labelledby="tautan-heading">
+          <h3 id="tautan-heading" class="text-wrapper-8">TAUTAN TERKAIT</h3>
+          <ul class="tautan-terkait-list">
+            <li class="tautan-terkait-item">
+              <a href="https://dinkominfo.rembangkab.go.id/" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img
+                  class="lambang-kabupaten-2"
+                  src="images/logo-kominfo.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-9">DinKominfo Rembang</span>
+              </a>
+            </li>
+            <li class="tautan-terkait-item">
+              <a href="https://rembangkab.bps.go.id/id" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img class="bps" src="images/bps.webp" alt="" aria-hidden="true" />
+                <span class="text-wrapper-10">BPS Kab. Rembang</span>
+              </a>
+            </li>
+            <li class="tautan-terkait-item">
+              <a href="https://id.wikipedia.org/wiki/Kabupaten_Rembang" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img class="wikipedia" src="images/wikipedia.png" alt="" aria-hidden="true" />
+                <span class="text-wrapper-11">Wikipedia Rembang</span>
+              </a>
+            </li>
+            <li class="tautan-terkait-item">
+              <a href="https://www.detik.com/tag/rembang" class="tautan-terkait-link" rel="noopener noreferrer" target="_blank">
+                <img class="detikcom" src="images/detikcom.jpg" alt="" aria-hidden="true" />
+                <span class="text-wrapper-12">DetikJateng Rembang</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <aside class="pengunjung" aria-labelledby="pengunjung-heading">
+          <h3 id="pengunjung-heading" class="text-wrapper-13">PENGUNJUNG</h3>
+          <dl class="frame">
+            <dt class="text-wrapper-14">TOTAL</dt>
+            <dd class="text-wrapper-15">0000001</dd>
+            <dt class="text-wrapper-16">ONLINE</dt>
+            <dd class="text-wrapper-17">0000001</dd>
+            <dt class="text-wrapper-18">BULAN INI</dt>
+            <dd class="text-wrapper-19">0000001</dd>
+          </dl>
+        </aside>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            alert(`Searching for: ${query}`);
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function openProfile() {
+            alert('Opening profile...');
+        }
+
+        function loginAdmin() {
+            alert('Redirecting to admin login...');
+        }
+
+        function filterBerita(category) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Filter logic would go here
+            console.log('Filtering by:', category);
+        }
+    </script>
+</body>
+</html>
