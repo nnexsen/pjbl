@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal 1</title>
+</head>
+<h1 style="text-align: center;"><b>SOAL 1</b></h1>
+<body>
+
+    <table class="meja-kasir" border="1" width="auto" cellpadding="10px" cellspacing="0" align="center">
+        <tr>
+            <td> Nama Barang </td>
+            <td> <input type="text" id="barang" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Harga </td>
+            <td> <input type="number" id="harga" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Jumlah </td>
+            <td> <input type="number" id="jumlah" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Total </td>
+            <td> <input type="text" id="total" readonly></td>
+        </tr>
+        <tr>
+            <td> Diskon 10% </td>
+            <td> <input type="text" id="diskon" readonly></td>
+        </tr>
+        <tr>
+            <td> Total Bayar </td>
+            <td> <input type="text" id="total-bayar" readonly></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="6" style="text-align: center;">
+                <button class="proses" onclick="proses()">PROSES</button>
+                <button class="reset" onclick="reset()">RESET</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function mulai() {
+            const barangInput = document.getElementById('barang').value
+            
+            const harga = document.getElementById('harga').value;
+            document.getElementById('harga').value = harga ? harga : '';
+
+            const jumlah = document.getElementById('jumlah').value;
+            const total = harga * jumlah;
+            document.getElementById('total').value = total ? total : '';
+
+            const diskon = total * 0.1;
+            document.getElementById('diskon').value = diskon ? diskon : '';
+
+            const totalBayar = total - diskon;
+            document.getElementById('total-bayar').value = totalBayar ? totalBayar : '';
+        }
+
+        function reset() {
+            document.getElementById('barang').value = '';
+            document.getElementById('harga').value = '';
+            document.getElementById('jumlah').value = '';
+            document.getElementById('total').value = '';
+            document.getElementById('diskon').value = '';
+            document.getElementById('total-bayar').value = '';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+.ytta1{
+    grid-area: header;
+    background-color: black;
+}
+.ytta2{
+    grid-area: menu;
+    background-color: white;
+    border: 5px solid rgb(57, 62, 70);
+}
+.ytta3{
+    grid-area: main;
+    background-color: rgb(219, 219, 219);
+    border: 5px solid rgb(57, 62, 70);
+}
+.ytta4{
+    grid-area: right;
+    background-color: rgb(57, 62, 70);
+    border: 5px solid rgb(57, 62, 70);
+}
+.ytta5{
+    grid-area: footer;
+    background-color: rgb(57, 62, 70);
+}
+.ytta6{
+    grid-area: logo;
+    background-color: black;
+}
+
+.ya{
+    display: grid;
+    grid-template-areas:
+    'logo header header header'
+    'menu main main right'
+    'footer footer footer footer'
+;
+grid-gap: 10px;
+padding: 10px;
+background-color:rgb(238, 238, 238);
+}
+

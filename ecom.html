@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecommerce</title>
+    <style>
+        .a1{
+    grid-area: logo;
+    background-color: rgb(255, 255, 255);
+}
+.a2{
+    grid-area: search;
+    background-color: white;
+    padding: 10px 15px;
+}
+.a3{
+    grid-area: account;
+    background-color: rgb(255, 255, 255);
+}
+.main-bar{
+    grid-area: navigation;
+    background-color: rgb(255, 255, 255);
+    border : 2px solid black;
+}
+.a5{
+    grid-area: sidebar;
+    background-color: rgb(238, 238, 238);
+}
+.a6{
+    grid-area: banner;
+    background-color: black;
+}
+.a7{
+    grid-area: language;
+    background-color: black;
+    border: 2px solid black;
+}
+
+.aa{
+    display: grid;
+    grid-template-areas:
+    'logo search search account'
+    'navigation navigation navigation language'
+    'sidebar banner banner banner'
+;
+grid-gap: 10px;
+padding: 10px;
+background-color:rgb(238, 238, 238);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="aa">
+        <div class="a1"> brand logo </div>
+        <div class="a2" align="center">
+            <input type="text" name="search" size="130" placeholder="Search for products or something here">
+            <button type="submit"> <img src="111.png" alt="" width="10" > </button> </div>
+        <div class="a3"> welcome! <br> <a href="login.html">Log in</a> or <a href="Register.html"> Register</a> </div>
+        <div class="a4" align="left"> 
+         
+        
+        <div class="main-bar">
+            <select name="Profil Desa" id="profil-desa">
+                <option value="profile-desa"> Profil Desa </option>
+                <option value="sejarah-desa"> Sejarah Desa </option>
+                <option value="wilayah-desa "> Wilayah Desa </option>
+            </select>
+            <select name="Data Desa" id="data-desa">
+                <option value="data-desa">Data Desa</option>
+                <option value="data-wilayah-administratif=">Data Wilayah Administratif</option>
+                <option value="data-pendidikan-dalam-kk">Data Pendidikan Dalam KK</option>
+                <option value="data-pendidikan-ditempuh">Data Pendidikan Ditempuh</option>
+                <option value="data-pekerjaan">Data Pekerjaan</option>
+                <option value="data-agama">Data Agama</option>
+                <option value="data-jenis-kelamin">Data Jenis Kelamin</option>
+                <option value="data-warga-negara">Data Warga Negara</option>
+            </select>
+            <a href="" id="visi-misi">Visi-Misi</a>
+            <a href="" id="berita">Berita</a>
+        </div>
+        
+            
+
+
+    </div>
+    
+</body>
+</html>

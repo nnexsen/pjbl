@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+</head>
+<h2 align="center"><b>TIMER</b></h2>
+<body>
+    <div id="1" align="center">
+        <input type="number" id="second" min="1">
+        <button onclick="proses()">Start</button>
+        <div></div>  
+    </div>
+    <br>
+    <div id="2" align="center">
+        <input type="number" id="display" readonly>
+    </div>
+    
+    <script>
+        function proses() {
+            let limit = document.getElementById('second').value;
+            document.getElementById('display').value = limit; 
+            let interval = setInterval(function() { limit--;
+                document.getElementById('display').value = limit;
+
+                if (limit == 0) {
+                    document.getElementById('display').innerHTML
+                    alert("countdown finished");
+                    clearInterval(interval);
+                    document.getElementById('display').textContent = selesai;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

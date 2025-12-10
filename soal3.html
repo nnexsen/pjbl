@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal 3</title>
+</head>
+<H1 align="center"><b>SOAL 3</b></H1>
+<body>
+    <table class="meja-kasir" border="1" width="auto" cellpadding="10px" cellspacing="0" align="center">
+        <tr>
+            <td> Nama Barang </td>
+            <td>
+                <select name="barang" id="barang">
+                    <option value="monitor" onclick="mulai()">Monitor</option>
+                    <option value="mouse" onclick="mulai()">Mouse</option>
+                    <option value="keyboard" onclick="mulai()">Keyboard</option>
+                    <option value="headset" onclick="mulai()">Headset</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Jumlah </td>
+            <td> <input type="number" id="jumlah" min="0" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Harga </td>
+            <td> <input type="number" id="harga" readonly></td>
+        </tr>
+        <tr>
+            <td> Total </td>
+            <td> <input type="text" id="total" readonly></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="6" style="text-align: center;">
+                <button class="proses" onclick="proses()">PROSES</button>
+                <button class="reset" onclick="reset()">RESET</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function mulai() {
+            const barangSelect = document.getElementById('barang').value;
+            
+            let harga = 0;
+            if (barangSelect === 'monitor') {
+                harga = 1500000;
+            } else if (barangSelect === 'mouse') {
+                harga = 150000;
+            } else if (barangSelect === 'keyboard') {
+                harga = 300000;
+            } else if (barangSelect === 'headset') {
+                harga = 500000;
+            }
+            document.getElementById('harga').value = harga;
+
+            const jumlah = document.getElementById('jumlah').value;
+            const total = harga * jumlah;
+            document.getElementById('total').value = total ? total : '';
+        }
+
+        function reset() {
+            document.getElementById('barang').value = '';
+            document.getElementById('jumlah').value = '';
+            document.getElementById('harga').value = '';
+            document.getElementById('total').value = '';
+        }
+    </script>
+
+</body>
+</html>

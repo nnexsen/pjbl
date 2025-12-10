@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Praktik Pembuatan Es Puter</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            background-color: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        h1 { font-size: 14pt; text-transform: uppercase; margin-bottom: 20px; }
+        h2 { font-size: 13pt; margin-bottom: 15px; }
+        h3 { font-size: 12pt; text-align: left; margin-top: 20px; }
+        p { text-align: justify; margin-bottom: 10px; }
+        .center-text { text-align: center; }
+        .cover-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh; /* Agar cover penuh satu halaman */
+            text-align: center;
+        }
+        .cover-item { margin-bottom: 30px; }
+        ol, ul { text-align: justify; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th { background-color: #f2f2f2; text-align: center; }
+        
+        /* Hilangkan elemen browser saat diprint */
+        @media print {
+            body { margin: 0; padding: 0; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HALAMAN JUDUL -->
+    <div class="cover-section">
+        <div class="cover-item">
+            <h1>LAPORAN PRAKTIK IPAS<br>PEMBUATAN ES PUTER<br>(PENERAPAN SIFAT KOLIGATIF LARUTAN)</h1>
+        </div>
+
+        <div class="cover-item">
+            <p><strong>Disusun Oleh:</strong></p>
+            <p>Nama : Muhammad Naja Zainul Wafa<br>
+            Kelas : 10 PPLG (Pengembangan Perangkat Lunak dan Gim)<br>
+            Sekolah : SMK Salafiyah Kajen</p>
+        </div>
+
+        <div class="cover-item">
+            <p><strong>Guru Pembimbing:</strong></p>
+            <p><br><br><br>...........................................<br>(Khida Efty Nely Ifada, S. Pd)</p>
+        </div>
+
+        <div class="cover-item">
+            <p><strong>SMK SALAFIYAH KAJEN<br>TAHUN PELAJARAN 2025/2026</strong><br>
+            Tanggal Pelaksanaan: 17 November 2025</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- KATA PENGANTAR -->
+    <h2>KATA PENGANTAR</h2>
+    <p>Puji syukur penyusun panjatkan ke hadirat Tuhan Yang Maha Esa, karena atas rahmat dan karunia-Nya, penyusun dapat menyelesaikan Laporan Praktik Pembuatan Es Puter ini. Laporan ini disusun untuk memenuhi tugas mata pelajaran IPAS di Jurusan PPLG.</p>
+    <p>Praktik ini memberikan pengalaman berharga tentang bagaimana prinsip fisika dapat diterapkan dalam kehidupan sehari-hari, serta melatih kreativitas siswa dalam memodifikasi alat kerja. Penyusun mengucapkan terima kasih kepada Bapak/Ibu Guru pembimbing serta teman-teman kelas X PPLG yang telah bekerjasama.</p>
+    <p>Penyusun menyadari bahwa laporan ini masih memiliki kekurangan. Oleh karena itu, kritik dan saran yang membangun sangat diharapkan.</p>
+    <br>
+    <p style="text-align: right;">Kajen, November 2025<br><br><br><br>Muhammad Naja Zainul Wafa</p>
+
+    <div class="page-break"></div>
+
+    <!-- DAFTAR ISI -->
+    <h2>DAFTAR ISI</h2>
+    <p>1. Halaman Judul ............................................................................................ i</p>
+    <p>2. Kata Pengantar ............................................................................................ ii</p>
+    <p>3. Daftar Isi .................................................................................................... iii</p>
+    <p>4. BAB I – PENDAHULUAN ......................................................................... 1</p>
+    <p>5. BAB II – TINJAUAN TEORI ..................................................................... 2</p>
+    <p>6. BAB III – METODE PRAKTIK .................................................................. 3</p>
+    <p>7. BAB IV – HASIL DAN PEMBAHASAN ................................................... 5</p>
+    <p>8. BAB V – PENUTUP ................................................................................... 7</p>
+    <p>9. Daftar Pustaka ............................................................................................ 8</p>
+    <p>10. Lampiran ................................................................................................... 9</p>
+
+    <div class="page-break"></div>
+
+    <!-- BAB I -->
+    <h2>BAB I<br>PENDAHULUAN</h2>
+
+    <h3>4.1 Latar Belakang</h3>
+    <p>Ilmu Pengetahuan Alam dan Sosial (IPAS) memiliki kaitan erat dengan teknologi dan kehidupan sehari-hari. Salah satu fenomena yang menarik untuk dipelajari adalah perubahan wujud zat dan penurunan titik beku larutan. Es puter merupakan produk olahan pangan yang memanfaatkan prinsip tersebut secara tradisional.</p>
+    <p>Sebagai siswa jurusan Pengembangan Perangkat Lunak dan Gim (PPLG), kemampuan berpikir logis dan pemecahan masalah (problem solving) sangat diperlukan. Dalam praktik ini, selain memahami konsep sains, siswa juga dituntut untuk berinovasi dalam penggunaan alat, seperti modifikasi alat putar menggunakan bor listrik untuk efisiensi tenaga, meskipun dalam pelaksanaannya terdapat tantangan teknis.</p>
+
+    <h3>4.2 Tujuan Praktik</h3>
+    <ol>
+        <li>Mengetahui proses pembuatan es puter dengan bahan dasar susu dan santan.</li>
+        <li>Mengidentifikasi perubahan wujud zat dari cair menjadi padat (membeku).</li>
+        <li>Menguji efektivitas penggunaan alat bantu mekanik (bor) dalam proses pembuatan es puter.</li>
+    </ol>
+
+    <h3>4.3 Manfaat Praktik</h3>
+    <ol>
+        <li>Siswa dapat memahami konsep sifat koligatif larutan (penurunan titik beku) secara nyata.</li>
+        <li>Melatih kreativitas dalam memodifikasi alat kerja.</li>
+        <li>Melatih kesabaran dan analisis ketika terjadi kendala teknis di lapangan.</li>
+    </ol>
+
+    <div class="page-break"></div>
+
+    <!-- BAB II -->
+    <h2>BAB II<br>TINJAUAN TEORI</h2>
+
+    <h3>5.1 Pengertian Es Puter</h3>
+    <p>Es puter adalah es krim tradisional Indonesia yang umumnya berbahan dasar santan. Dinamakan es puter karena proses pembuatannya yang melibatkan pemutaran tabung adonan di dalam wadah berisi es batu dan garam.</p>
+
+    <h3>5.2 Konsep Perubahan Wujud Zat</h3>
+    <p>Perubahan wujud yang terjadi adalah <strong>membeku</strong>, yaitu perubahan fase dari cair menjadi padat. Kalor (panas) dari adonan susu dan santan dilepaskan menuju campuran pendingin (es batu dan garam), menyebabkan suhu adonan turun hingga mencapai titik beku.</p>
+
+    <h3>5.3 Prinsip Kerja (Sifat Koligatif)</h3>
+    <p>Prinsip utama pembuatan es puter adalah penurunan titik beku. Es batu normalnya memiliki suhu 0°C. Penambahan garam (NaCl) berfungsi mengganggu kesetimbangan fase es dan air, sehingga menurunkan titik beku campuran tersebut hingga jauh di bawah 0°C (bisa mencapai -10°C atau lebih). Suhu ekstrem inilah yang mampu membekukan adonan es krim.</p>
+
+    <div class="page-break"></div>
+
+    <!-- BAB III -->
+    <h2>BAB III<br>METODE PRAKTIK</h2>
+
+    <h3>6.1 Alat dan Bahan</h3>
+    <p><strong>Bahan:</strong></p>
+    <ul>
+        <li>Susu Full Cream: 1000 ml (1 Liter)</li>
+        <li>Santan: 200 ml</li>
+        <li>Gula Pasir: 40 gram (± 4 sendok makan)</li>
+        <li>Perasa & Pewarna: Pop Ice rasa Bubble Gum</li>
+        <li>Garam Kasar: 1 kg</li>
+        <li>Es Batu: 3 balok lebih (dihancurkan)</li>
+    </ul>
+    <p><strong>Alat:</strong></p>
+    <ul>
+        <li>Kaleng Wafer bekas (sebagai wadah adonan)</li>
+        <li>Baskom besar (sebagai wadah es dan garam)</li>
+        <li>Bor listrik (mata bor dikaitkan ke tutup kaleng untuk memutar kaleng yang berisi adonan)</li>
+        <li>Batu (untuk memecah es batu)</li>
+        <li>Sendok stainless</li>
+    </ul>
+
+    <h3>6.2 Prosedur Kerja</h3>
+    <ol>
+        <li><strong>Persiapan Adonan:</strong> Mencampurkan susu full cream (1000ml), santan (200ml), gula (40gr), dan bubuk Pop Ice Bubble Gum ke dalam wadah. Aduk hingga rata menggunakan sendok stainless.</li>
+        <li><strong>Persiapan Alat:</strong> Memasukkan adonan ke dalam kaleng biskuit, kemudian menutupnya dengan rapat.</li>
+        <li><strong>Setting Pendingin:</strong> Menyiapkan baskom, memasukkan pecahan es batu balok dan menaburkan garam kasar secara merata di sekeliling kaleng.</li>
+        <li><strong>Modifikasi Alat:</strong> Memasang bor listrik pada bagian tutup kaleng untuk membantu proses pemutaran agar lebih ringan.</li>
+        <li><strong>Proses Pemutaran:</strong> Menyalakan bor untuk memutar kaleng di dalam tumpukan es batu dan garam.</li>
+        <li><strong>Penyelesaian:</strong> Setelah adonan membeku, es puter siap disajikan.</li>
+    </ol>
+
+    <h3>6.3 Keselamatan Kerja</h3>
+    <ul>
+        <li>Berhati-hati saat memecahkan es batu menggunakan batu.</li>
+        <li>Memastikan instalasi bor aman agar tidak melukai tangan saat terlepas.</li>
+        <li>Menjaga kebersihan adonan agar tidak terkontaminasi garam atau kotoran luar.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- BAB IV -->
+    <h2>BAB IV<br>HASIL DAN PEMBAHASAN</h2>
+
+    <h3>7.1 Hasil Praktik</h3>
+    <table>
+        <tr>
+            <th>Indikator</th>
+            <th>Hasil Pengamatan</th>
+        </tr>
+        <tr>
+            <td>Waktu Pembuatan</td>
+            <td>± 80 menit (1,3 jam)</td>
+        </tr>
+        <tr>
+            <td>Tekstur Akhir</td>
+            <td>Lembut dan padat</td>
+        </tr>
+        <tr>
+            <td>Rasa</td>
+            <td>Sangat enak, rasa Bubble Gum dan gurih santan menyatu</td>
+        </tr>
+        <tr>
+            <td>Volume Adonan</td>
+            <td>1,2 Liter + bahan kering (Cukup banyak)</td>
+        </tr>
+    </table>
+
+    <h3>7.2 Pembahasan</h3>
+    <p>Dalam praktik yang dilaksanakan pada tanggal 17 November 2025 ini, kelompok kami berhasil membuat es puter dengan tekstur yang lembut dan rasa yang enak. Namun, waktu yang dibutuhkan cukup lama, yaitu sekitar 80 menit. Berdasarkan analisis kami, ada beberapa faktor dan kendala yang mempengaruhi proses tersebut:</p>
+    
+    <p><strong>1. Kendala Mekanis (Alat Bor):</strong><br>
+    Kami berinovasi menggunakan bor untuk memutar kaleng agar tidak lelah memutar manual. Namun, proses pemutaran menjadi tidak stabil. Mata bor sering terlepas dari kait tutup kaleng karena beban putaran es yang semakin berat saat mulai membeku. Hal ini menyebabkan proses putaran sering terhenti untuk perbaikan alat.</p>
+
+    <p><strong>2. Faktor Jenis Es Batu:</strong><br>
+    Kami menemukan bahwa jenis es batu sangat berpengaruh. Penggunaan es batu kristal (bolong tengah) ternyata lebih cepat mencair dibandingkan es batu balok biasa, meskipun takaran garamnya (1 kg) sudah sama. Es yang cepat mencair membuat suhu dingin tidak bertahan lama secara maksimal, sehingga harus sering menambah es.</p>
+
+    <p><strong>3. Volume Adonan:</strong><br>
+    Volume total adonan mencapai lebih dari 1,2 liter. Jumlah ini cukup banyak untuk ukuran kaleng dan media pendingin yang kami gunakan. Semakin banyak volume zat cair yang ingin dibekukan, semakin banyak kalor yang harus dilepaskan, sehingga waktu pembekuan menjadi lebih lama (mencapai 1 jam lebih).</p>
+
+    <div class="page-break"></div>
+
+    <!-- BAB V -->
+    <h2>BAB V<br>PENUTUP</h2>
+
+    <h3>8.1 Kesimpulan</h3>
+    <p>Berdasarkan praktik pembuatan es puter yang telah dilakukan, dapat disimpulkan bahwa:</p>
+    <ol>
+        <li>Pembuatan es puter adalah penerapan prinsip perpindahan kalor dan penurunan titik beku larutan menggunakan garam.</li>
+        <li>Inovasi teknologi (penggunaan bor) sangat membantu mengurangi tenaga manusia, namun perlu perancangan mekanik yang lebih kokoh agar stabil.</li>
+        <li>Jenis es batu balok lebih efektif mempertahankan suhu dingin dibandingkan es batu kristal untuk metode ini.</li>
+    </ol>
+
+    <h3>8.2 Saran</h3>
+    <ol>
+        <li>Untuk praktik selanjutnya, jika menggunakan volume adonan lebih dari 1 liter, sebaiknya jumlah es batu dan garam diperbanyak (lebih dari 1 kg garam).</li>
+        <li>Jika ingin menggunakan bor atau alat bantu putar, pastikan pengait pada tutup kaleng terpasang permanen atau sangat kuat agar tidak lepas saat beban putaran bertambah berat.</li>
+        <li>Gunakan es batu balok yang dipecah sendiri agar lebih awet dan tidak cepat menjadi air.</li>
+    </ol>
+
+    <div class="page-break"></div>
+
+    <!-- DAFTAR PUSTAKA -->
+    <h2>DAFTAR PUSTAKA</h2>
+    <ul>
+        <li>Modul Pembelajaran IPAS SMK Kurikulum Merdeka.</li>
+        <li>Tim Guru IPAS SMK Salafiyah Kajen. (2025). <em>Panduan Praktikum Sifat Koligatif Larutan</em>.</li>
+        <li>Referensi Internet: <em>Teknik Pembuatan Es Puter Tradisional</em>.</li>
+    </ul>
+
+    <br><br>
+    <hr>
+    
+    <!-- LAMPIRAN -->
+    <h2>LAMPIRAN</h2>
+    <p><strong>Dokumentasi Kegiatan:</strong></p>
+    <br>
+    <div style="border: 2px dashed #000; height: 300px; display: flex; justify-content: center; align-items: center;">
+        <p>(Tempel Foto Proses Pemecahan Es Batu & Persiapan Adonan Di Sini)</p>
+    </div>
+    <br>
+    <div style="border: 2px dashed #000; height: 300px; display: flex; justify-content: center; align-items: center;">
+        <p>(Tempel Foto Proses Memutar Kaleng Menggunakan Bor Di Sini)</p>
+    </div>
+    <br>
+    <div style="border: 2px dashed #000; height: 300px; display: flex; justify-content: center; align-items: center;">
+        <p>(Tempel Foto Hasil Akhir Es Puter Di Sini)</p>
+    </div>
+
+</body>
+</html>

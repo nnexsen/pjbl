@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Kasir ATC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .transaction-table th {
+            background-color: #1B3C53;
+            color: white;
+            padding: 12px;
+        }
+        
+        .transaction-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .input-number {
+            width: 200px;
+            padding: 5px;
+        }
+        
+        .total-section td {
+            font-weight: bold;
+        }
+        
+        .reset-btn {
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .readonly-input {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">FUCK OFF AND JUST CHECKOUT SOMETHING U NEED SHIT</h1>
+    
+    <table class="transaction-table">
+        <tr>
+            <th>KODE</th>
+            <th>DESKRIPSI</th>
+            <th>GAMBAR</th>
+            <th>HARGA</th>
+            <th>JUMLAH</th>
+            <th>SUB TOTAL</th>
+        </tr>
+        <tr>
+            <td>1001</td>
+            <td>AB482 40mm Smartwatch Silver</td>
+            <td align="center"><img src="img/watch1.jpg" alt="silver watch" width="100"></td>
+            <td>5.999.999</td>
+            <td><input type="number" id="qty1" class="input-number" min="0" value="0" oninput="hitungTotal()"></td>
+            <td><input type="text" id="subtotal1" class="input-number readonly-input" readonly></td>
+        </tr>
+        <tr>
+            <td>1002</td>
+            <td>AE301 40mm Dust Resist Gold</td>
+            <td align="center"><img src="img/watch2.jpg" alt="gold watch" width="100"></td>
+            <td>1.999.999</td>
+            <td><input type="number" id="qty2" class="input-number" min="0" value="0" oninput="hitungTotal()"></td>
+            <td><input type="text" id="subtotal2" class="input-number readonly-input" readonly></td>
+        </tr>
+         <tr>
+            <td>1003</td>
+            <td>AC505 40mm Nuclear Resist Black</td>
+            <td align="center"><img src="img/watch3.jpg" alt="black watch" width="100"></td>
+            <td>99.999.999</td>
+            <td><input type="number" id="qty3" class="input-number" min="0" value="0" oninput="hitungTotal()"></td>
+            <td><input type="text" id="subtotal3" class="input-number readonly-input" readonly></td>
+        </tr>
+        
+        <tr class="total-section">
+            <td colspan="4"></td>
+            <td>TOTAL</td>
+            <td><input type="text" id="total" class="input-number readonly-input" readonly></td>
+        </tr>
+        <tr class="total-section">
+            <td colspan="4"></td>
+            <td>DISKON 10%</td>
+            <td><input type="text" id="diskon" class="input-number readonly-input" readonly></td>
+        </tr>
+        <tr class="total-section">
+            <td colspan="4"></td>
+            <td>TOTAL BAYAR</td>
+            <td><input type="text" id="totalBayar" class="input-number readonly-input" readonly></td>
+        </tr>
+        <tr class="total-section">
+            <td colspan="4"></td>
+            <td>BAYAR</td>
+            <td><input type="number" id="bayar" class="input-number" min="0" oninput="hitungKembalian()"></td>
+        </tr>
+        <tr class="total-section">
+            <td colspan="4"></td>
+            <td>KEMBALIAN</td>
+            <td><input type="text" id="kembalian" class="input-number readonly-input" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: right">
+                <button class="reset-btn" onclick="resetTransaksi()">RESET</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        const formatCurrency = (amount) => {
+            return + amount.toFixed(2);
+        };
+
+        function hitungTotal() {
+
+            const harga1 = 5999999;
+            const harga2 = 1999999;
+            const harga3 = 99999999;
+            
+            const qty1 = parseInt(document.getElementById('qty1').value) || 0;
+            const qty2 = parseInt(document.getElementById('qty2').value) || 0;
+            const qty3 = parseInt(document.getElementById('qty3').value) || 0;
+            
+            const subtotal1 = qty1 * harga1;
+            const subtotal2 = qty2 * harga2;
+            const subtotal3 = qty3 * harga3;
+            
+            document.getElementById('subtotal1').value = formatCurrency(subtotal1);
+            document.getElementById('subtotal2').value = formatCurrency(subtotal2);
+            document.getElementById('subtotal3').value = formatCurrency(subtotal3);
+            
+            const total = subtotal1 + subtotal2 + subtotal3;
+            const diskon = total * 0.1; 
+            const totalBayar = total - diskon;
+            
+            document.getElementById('total').value = formatCurrency(total);
+            document.getElementById('diskon').value = formatCurrency(diskon);
+            document.getElementById('totalBayar').value = formatCurrency(totalBayar);
+            
+            document.getElementById('bayar').value = '';
+            document.getElementById('kembalian').value = '';
+        }
+
+        function hitungKembalian() {
+            const totalBayar = parseFloat(document.getElementById('totalBayar').value.replace('', ''));
+            const bayar = parseFloat(document.getElementById('bayar').value) || 0;
+            const kembalian = bayar - totalBayar;
+            
+            document.getElementById('kembalian').value = formatCurrency(Math.max(0, kembalian));
+        }
+
+        function resetTransaksi() {
+            const inputs = ['qty1', 'qty2', 'subtotal1', 'subtotal2', 
+                          'total', 'diskon', 'totalBayar', 'bayar', 'kembalian'];
+            
+            inputs.forEach(id => {
+                document.getElementById(id).value = id.startsWith('qty') ? '0' : '';
+            });
+            
+            hitungTotal();
+        }
+
+        hitungTotal();
+    </script>
+</body>
+</html>

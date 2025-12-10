@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>konversi nilai ke angka</title>
+</head>
+<h2 align="center"><b>RATE CONVERSION</b></h2>
+<body>
+    </table>
+    <br>
+    <table border="1" width="auto" cellpadding="auto" cellspacing="0" align="center">
+        <tr>
+            <td align="center"><b>NILAI</b></td>
+            <td align="center"><b>PREDIKAT</b></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="nilai" min="0" max="100" oninput="konversi()"></td>
+            <td><input type="text" id="predikat" readonly></td>
+        </tr>
+    </table>
+
+    <script>
+        function konversi() {
+
+            let nilai = document.getElementById('nilai').value;
+            let predikat = document.getElementById('predikat');
+
+
+            if (nilai >=90) predikat.value = "A";
+
+            else if (nilai >= 85) predikat.value = "AB";
+
+            else if (nilai >= 75) predikat.value = "B";
+
+            else if (nilai >= 70) predikat.value = "BC";
+
+            else if (nilai >= 60) predikat.value = "C";
+
+            else if (nilai >= 55) predikat.value = "CD";
+
+            else if (nilai >= 45) predikat.value = "D";
+
+            else if (nilai >= 0) predikat.value = "E";
+
+            else predikat.value = "";
+
+        }
+    </script>
+</body>
+</html>

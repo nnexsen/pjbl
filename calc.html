@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<H1 align="center"> SIMPLE CALCULATOR</H1>
+<body>
+
+    <table border="1" width="500" cellpadding="10px" cellspacing="0" align="center">
+        <tr>
+            <th>NUMBER 1</th>
+            <th><input type="number" id="number1" min="0" oninput="hitung()"></th>
+        </tr>
+
+        <tr>
+            <th>NUMBER 2</th>
+            <th><input type="number" id="number2" min="0" oninput="hitung()"></th>
+        </tr>
+
+        <tr>
+            <th>CALCULATE</th>
+            <th><input type="text" id="result" readonly></th>
+        </tr>
+    </table>
+    <table border="1" width="500" cellpadding="10px" cellspacing="0" align="center" style="margin-top: 20px;">
+        <tr>
+            <th colspan="4">OPERATIONS</th>
+        </tr>
+        <tr>
+            <th><button onclick="hitung('+')">➕</button></th>
+            <th><button onclick="hitung('-')">➖</button></th>
+            <th><button onclick="hitung('*')">✖️</button></th>
+            <th><button onclick="hitung('/')">➗</button></th>
+        </tr>
+    </table>
+    <br>
+    <h1 align="center"><b>RATE CONVERSION</b></h1>
+    <br>
+    <table border="1" width="auto" cellpadding="auto" cellspacing="0" align="center">
+        <tr>
+            <td align="center"><b>NILAI</b></td>
+            <td align="center"><b>PREDIKAT</b></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="nilai" min="0" max="100" oninput="konversi()"></td>
+            <td><input type="text" id="predikat" readonly></td>
+        </tr>
+
+
+    <script>
+        function konversi() {
+
+            let nilai = document.getElementById('nilai').value;
+            let predikat = document.getElementById('predikat');
+
+
+            if (nilai >=90) predikat.value = "A";
+
+            else if (nilai >= 85) predikat.value = "AB";
+
+            else if (nilai >= 75) predikat.value = "B";
+
+            else if (nilai >= 70) predikat.value = "BC";
+
+            else if (nilai >= 60) predikat.value = "C";
+
+            else if (nilai >= 55) predikat.value = "CD";
+
+            else if (nilai >= 45) predikat.value = "D";
+
+            else if (nilai >= 0) predikat.value = "E";
+
+            else predikat.value = "";
+
+        }
+    </script>
+
+    <script>
+        function hitung(operator) {
+            let num1 = parseFloat(document.getElementById('number1').value) || 0;
+            let num2 = parseFloat(document.getElementById('number2').value) || 0;
+            let result = 0;
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num2 !== 0 ? num1 / num2 : 'orang aneh';
+                    break;
+                default:
+                    result = '';
+            }
+
+            document.getElementById('result').value = result;
+        }
+    </script>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+:root {
+  --label-fill: rgba(0, 0, 0, 1);
+  --label-stroke: rgba(255, 255, 255, 1);
+  --building-fill: rgba(204, 204, 204, 1);
+  --building-stroke: rgba(179, 179, 179, 1);
+  --polygon-fill: rgba(0, 229, 229, 0.5);
+  --polygon-stroke: rgba(0, 128, 128, 1);
+  --line-stroke: rgba(0, 200, 200, 1);
+  --overlay-point: rgba(50, 50, 50, 1);
+  --tree-fill: rgba(157, 219, 150, 1);
+  --education-spaces: rgba(254, 255, 230, 1);
+  --industrial: rgba(236, 219, 233, 1);
+  --commercial: rgba(243, 217, 217, 1);
+  --residential-areas: rgba(225, 225, 225, 1);
+  --wood-fill: rgba(174, 209, 159, 1);
+  --pitch-fill: rgba(170, 224, 203, 1);
+  --park-fill: rgba(190, 253, 200, 1);
+  --water-line-stroke: rgba(178, 178, 229, 1);
+  --water-area-fill: rgba(178, 178, 229, 1);
+  --water-area-stroke: rgba(178, 178, 229, 1);
+  --traffic-road-major: rgba(252, 214, 164, 1);
+  --traffic-road-super-major: rgba(232, 146, 162, 1);
+  --traffic-road: rgba(153, 153, 153, 1);
+  --service-road: rgba(178, 153, 153, 1);
+  --rail: rgba(128, 153, 204, 1);
+  --path: rgba(153, 153, 153, 1);
+  --neutraldgrey: rgba(77, 77, 77, 1);
+  --neutralwhite: rgba(255, 255, 255, 1);
+  --brandprimary: rgba(76, 175, 79, 1);
+  --body-medium-body-2-font-family: "Inter", Helvetica;
+  --body-medium-body-2-font-weight: 500;
+  --body-medium-body-2-font-size: 16px;
+  --body-medium-body-2-letter-spacing: 0px;
+  --body-medium-body-2-line-height: 24px;
+  --body-medium-body-2-font-style: normal;
+  --body-text-font-family: "Inter", Helvetica;
+  --body-text-font-weight: 500;
+  --body-text-font-size: 20px;
+  --body-text-letter-spacing: 0px;
+  --body-text-line-height: 150%;
+  --body-text-font-style: normal;
+  --button-link-medium-font-family: "Inter", Helvetica;
+  --button-link-medium-font-weight: 400;
+  --button-link-medium-font-size: 16px;
+  --button-link-medium-letter-spacing: 0px;
+  --button-link-medium-line-height: 20px;
+  --button-link-medium-font-style: normal;
+  --colors-backgrounds-primary: rgba(255, 255, 255, 1);
+  --kit-scroll-edge-effect-blur-radius: 10px;
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-colors-mode="light">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-colors-mode="light"] {
+  --colors-backgrounds-primary: rgba(255, 255, 255, 1);
+}
+
+[data-colors-mode="dark"] {
+  --colors-backgrounds-primary: rgba(0, 0, 0, 1);
+}
+
+[data-colors-mode="IC-light"] {
+  --colors-backgrounds-primary: rgba(255, 255, 255, 1);
+}
+
+[data-colors-mode="IC-dark"] {
+  --colors-backgrounds-primary: rgba(0, 0, 0, 1);
+}

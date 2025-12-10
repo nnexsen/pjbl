@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soal 2</title>
+</head>
+<h1 align="center"><b>SOAL 2</b></h1>
+<body>
+    <table class="meja-kasir" border="1" width="auto" cellpadding="10px" cellspacing="0" align="center">
+        <tr>
+            <td> Nama Pegawai </td>
+            <td> <input type="text" id="pegawai" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Jam Kerja </td>
+            <td> <input type="number" id="jam-kerja" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Upah Perjam </td>
+            <td> <input type="number" id="upah-perjam" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Anak </td>
+            <td> <input type="number" id="anak" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Gaji </td>
+            <td> <input type="number" id="gaji" oninput="mulai()"></td>
+        </tr>
+        <tr>
+            <td> Tunjangan anak 10% </td>
+            <td> <input type="text" id="tunjangan" readonly></td>
+        </tr>
+        <tr>
+            <td> Total Gaji </td>
+            <td> <input type="text" id="total-Gaji" readonly></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="6" style="text-align: center;">
+                <button class="proses" onclick="proses()">PROSES</button>
+                <button class="reset" onclick="pecat()">PECAT</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function mulai() {
+            const pegawaiInput = document.getElementById('pegawai').value
+            
+            const jamKerja = document.getElementById('jam-kerja').value;
+            document.getElementById('jam-kerja').value = jamKerja ? jamKerja : '';
+
+            const upahPerjam = document.getElementById('upah-perjam').value;
+            document.getElementById('upah-perjam').value = upahPerjam ? upahPerjam : '';
+
+            const anak = document.getElementById('anak').value;
+            document.getElementById('anak').value = anak ? anak : '';
+
+            const gaji = jamKerja * upahPerjam;
+            document.getElementById('gaji').value = gaji ? gaji : '';
+
+            const tunjangan = gaji * 0.1 * anak;
+            document.getElementById('tunjangan').value = tunjangan ? tunjangan : '';
+
+            const totalGaji = gaji + tunjangan;
+            document.getElementById('total-Gaji').value = totalGaji ? totalGaji : '';
+        }
+
+        function pecat() {
+            alert("Anda dipecat!");
+        }
+    </script>
+</body>
+</html>

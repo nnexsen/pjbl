@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e90ff, #70a1ff);
+            font-family: Arial, sans-serif;
+        }
+
+        .board {
+            display: grid;
+            width: 300px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .kotak {
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .kotak:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .status {
+            color: white;
+            font-size: 24px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .reset-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="status" id="status">Player X's Turn</div>
+    <div class="board">
+        <div class="kotak" id="kotak1" onclick="jalan('kotak1')"></div>
+        <div class="kotak" id="kotak2" onclick="jalan('kotak2')"></div>
+        <div class="kotak" id="kotak3" onclick="jalan('kotak3')"></div>
+        <div class="kotak" id="kotak4" onclick="jalan('kotak4')"></div>
+        <div class="kotak" id="kotak5" onclick="jalan('kotak5')"></div>
+        <div class="kotak" id="kotak6" onclick="jalan('kotak6')"></div>
+        <div class="kotak" id="kotak7" onclick="jalan('kotak7')"></div>
+        <div class="kotak" id="kotak8" onclick="jalan('kotak8')"></div>
+        <div class="kotak" id="kotak9" onclick="jalan('kotak9')"></div>
+    </div>
+    <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+
+    <script>
+        let p1 = true;
+        let gameActive = true;
+
+        function jalan(param) {
+            if (!gameActive || document.getElementById(param).innerHTML != "") {
+                return;
+            }
+
+            const currentPlayer = p1 ? "X" : "O";
+            document.getElementById(param).innerHTML = currentPlayer;
+            
+            if (checkWinner()) {
+                document.getElementById('status').innerHTML = `Player ${currentPlayer} Wins!`;
+                gameActive = false;
+                return;
+            }
+
+            else if ([...Array(9).keys()].every(i => document.getElementById(`kotak${i+1}`).innerHTML !== "")) {
+                document.getElementById('status').innerHTML = "DRAW!";
+                gameActive = false;
+                return;
+            }
+
+            p1 = !p1;
+            document.getElementById('status').innerHTML = `Player ${p1 ? 'X' : 'O'}'s Turn`;
+        }
+
+        function checkWinner() {
+            const winPatterns = [
+                [1,2,3], [4,5,6], [7,8,9], // rows
+                [1,4,7], [2,5,8], [3,6,9], // columns
+                [1,5,9], [3,5,7] // diagonals
+            ];
+
+            return winPatterns.some(pattern => {
+                const values = pattern.map(pos => 
+                    document.getElementById(`kotak${pos}`).innerHTML
+                );
+                return values[0] !== '' && 
+                       values[0] === values[1] && 
+                       values[1] === values[2];
+            });
+        }
+
+        function resetGame() {
+            for (let i = 1; i <= 9; i++) {
+                document.getElementById(`kotak${i}`).innerHTML = '';
+            }
+            p1 = true;
+            gameActive = true;
+            document.getElementById('status').innerHTML = "Player X's Turn";
+        }
+    </script>
+</body>
+</html>

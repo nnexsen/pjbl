@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Desa Sumberejo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 { font-size: 22px; margin: 0; font-weight: bold; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 30px;
+      padding: 15px 40px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+    nav .dropdown { position: relative; cursor: pointer; }
+    nav a { text-decoration: none; color: black; }
+    nav .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-width: 150px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    nav .dropdown:hover .dropdown-menu { display: block; }
+
+    /* MAIN CONTAINER */
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 30px 40px;
+    }
+
+    /* SLIDER */
+    .slider {
+      width: 60%;
+      height: 300px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ccc;
+    }
+    .slides {
+      display: flex;
+      height: 100%;
+      transition: 0.5s;
+    }
+    .slides img { width: 100%; height: 100%; object-fit: cover; }
+    .btn-prev, .btn-next {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .btn-prev { left: 10px; }
+    .btn-next { right: 10px; }
+
+    /* MAP */
+    #map {
+      width: 40%;
+      height: 300px;
+      border-radius: 12px;
+    }
+
+    @media(max-width: 900px) {
+      .wrapper { flex-direction: column; }
+      .slider, #map { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>WEBSITE DESA SUMBEREJO</h1>
+</header>
+
+<nav>
+  <div class="dropdown">Profil Desa
+    <div class="dropdown-menu">
+      <a>Sejarah Desa</a><br>
+      <a>Demografi</a>
+    </div>
+  </div>
+
+  <div class="dropdown">Data Desa
+    <div class="dropdown-menu">
+      <a>Data Penduduk</a><br>
+      <a>Data Pekerjaan</a>
+    </div>
+  </div>
+
+  <a>Visi & Misi</a>
+  <a>Berita</a>
+
+  <div class="dropdown">Hubungi Kami
+    <div class="dropdown-menu">
+      <a>Kontak</a><br>
+      <a>Lokasi</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper">
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60" />
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60" />
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=60" />
+    </div>
+    <button class="btn-prev" onclick="prevSlide()">❮</button>
+    <button class="btn-next" onclick="nextSlide()">❯</button>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  let index = 0;
+  function showSlide(i) {
+    const slides = document.getElementById('slides');
+    const total = slides.children.length;
+    index = (i + total) % total;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+  function nextSlide() { showSlide(index + 1); }
+  function prevSlide() { showSlide(index - 1); }
+
+  // MAP
+  const map = L.map('map').setView([-6.8, 111.45], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+  }).addTo(map);
+  L.marker([-6.8, 111.45]).addTo(map).bindPopup("Desa Sumberejo");
+</script>
+
+</body>
+</html>

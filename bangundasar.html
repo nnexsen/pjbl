@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung"an</title>
+</head>
+<h3 align="center">hitung bangun dasar</h3>
+<body>
+    <h2>Luas Persegi Panjang</h2>
+Masukkan Panjang<input type="number" id="panjang">
+Masukkan Lebar<input type="number" id="lebar">
+<button onclick="hitung()">Hitung</button>
+<input type="number" id="luas" readonly>
+
+<script>
+    function hitung(){
+        let panjang = document.getElementById('panjang').value;
+        let lebar = document.getElementById('lebar').value;
+        let luas = panjang * lebar;
+        document.getElementById('luas').value = luas;
+    }
+</script>
+<br><br>
+<h2>Luas Segitiga</h2>
+Masukkan Alas <input type="number" id="alas">
+Masukkan Tinggi <input type="number" id="tinggi">
+<button onclick="hitungLuasSegitiga()">Hitung</button>
+<input type="number" id="luas Segitiga" readonly>
+
+<script>
+    function hitungLuasSegitiga(){
+        let alas = document.getElementById('alas').value;
+        let tinggi = document.getElementById('tinggi').value;
+        let luas = 0.5 * alas * tinggi;
+        document.getElementById('luas Segitiga').value = luas;
+    }
+</script>
+<br><br>
+<h2>Hitung Luas Lingkaran</h2>
+Masukkan Jari-jari <input type="number" id="Jari-jari">
+<button onclick="hitungLuasLingkaran()">Hitung</button>
+<input type="number" id="Luas Lingkaran" readonly>
+
+<script>
+    function hitungLuasLingkaran() {
+        let jariJari = document.getElementById('Jari-jari').value;
+        let luas = Math.PI * jariJari * jariJari;
+        document.getElementById('Luas Lingkaran').value = luas;
+    }
+</script>
+<br><br>
+<h2>Hitung luas persegi panjang</h2>
+Masukkan panjang <input type="number" id="panjangpersegipanjang">
+Masukkan Lebar <input type="number" id="lebarpersegipanjang">
+<button onclick="hitungluaspersegipanjang()">Hitung</button>
+<input type="number" id="luaspersegipanjang" readonly>
+
+<script>
+    function hitungluaspersegipanjang() {
+        let panjangpersegipanjang = document.getElementById('panjangpersegipanjang').value;
+        let lebarpersegipanjang = document.getElementById('lebarpersegipanjang').value;
+
+        let luaspersegipanjang = panjangpersegipanjang * lebarpersegipanjang;
+        document.getElementById('luaspersegipanjang').value = luaspersegipanjang;
+    }
+</script>
+
+
+
+
+
+
+</body>
+</html>
